@@ -1,1 +1,4 @@
-const a = 0;
+import "./loadEnvironment";
+import express from "express";
+
+const app = express();
