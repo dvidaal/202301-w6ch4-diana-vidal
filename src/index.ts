@@ -1,12 +1,10 @@
 import "./loadEnvironment.js";
 import express from "express";
-import { getThingsIKnow } from "./controllers/getThingsIKnow.js";
-import { getThingById } from "./controllers/getThingById.js";
+import { thingsRouter } from "./roots/router.js";
 
 const app = express();
 const port = process.env.PORT ?? 3000;
 
-app.get("/things", getThingsIKnow);
+app.use("/things", thingsRouter);
 
-app.get("/things/:id", getThingById);
 app.listen(port);
